@@ -1,0 +1,39 @@
+'''Welcome to the source code for the Shitty Coin Toss Simulator, or SCTS (pronounces SKITS). This program will let you
+simulate a given number of coin tosses and then give you the stats afterwards.'''
+import random
+
+heads = 0
+tails = 0
+
+print("Thank you for choosing SCTS!")
+tosses = int(input("How many coin tosses would you like to simulate?"))
+numtos = tosses
+
+while tosses >= 1:
+    flip = random.randrange(1, 2)
+    tosses = tosses - 1
+
+    if flip == 1:
+        heads = heads + 1
+        tosses = tosses - 1
+    if flip == 2:
+        tails = tails + 1
+        tosses = tosses - 1
+
+print("You saw", heads, "heads up on a coin.")
+print("You saw", tails, "tails up on a coin.")
+
+if heads == 0:
+    tailper = tails / numtos * 100
+    print("This means 0 percent of your flips landed on heads and", tailper, "percent of your flips landed on tails.")
+
+if tails == 0:
+    headper = heads / numtos * 100
+    print("This means", headper, "percent of your flips landed on heads and 0 percent of your flips landed on tails.")
+
+headper = heads / numtos * 100
+tailper = tails / numtos * 100
+print("This means", headper, "percent of your flips landed on heads and", tailper,
+      "percent of your flips landed on tails.")
+
+
