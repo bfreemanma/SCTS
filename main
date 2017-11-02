@@ -2,38 +2,39 @@
 simulate a given number of coin tosses and then give you the stats afterwards.'''
 import random
 
-heads = 0
-tails = 0
+heads = 0 #amount of times a coin comes up as heads
+tails = 0 #amount of time a coin comes up as tails
 
-print("Thank you for choosing SCTS!")
-tosses = int(input("How many coin tosses would you like to simulate?"))
-numtos = tosses
 
-while tosses >= 1:
-    flip = random.randrange(1, 2)
-    tosses = tosses - 1
+print("Thank you for choosing SCTS!\n")
+print("Programmed by Brian Freeman")
+tosses = int(input("How many coin tosses would you like to simulate?\n")) #user inputs the amount of coin flips to sim
+numtos = tosses #maintains the original number of tosses for percentage calculation
 
-    if flip == 1:
+while tosses >= 1: #as long as there is at least one toss, this loop will run
+    flip = random.randint(1, 2) #generates a random heads or tails value
+
+    if flip == 1: #IF loop to count amount of heads and tails, as well as making an accurate amount of flips
         heads = heads + 1
         tosses = tosses - 1
     if flip == 2:
         tails = tails + 1
         tosses = tosses - 1
 
-print("You saw", heads, "heads up on a coin.")
+print("You saw", heads, "heads up on a coin.") #Gives raw number of heads and tails after simulation is complete
 print("You saw", tails, "tails up on a coin.")
 
-if heads == 0:
-    tailper = tails / numtos * 100
+if heads == 0: #Prevents a divide by zero error
+    tailper = tails / numtos * 100 #Calculates percentage
     print("This means 0 percent of your flips landed on heads and", tailper, "percent of your flips landed on tails.")
 
-if tails == 0:
-    headper = heads / numtos * 100
+if tails == 0:#Prevents a divide by zero error
+    headper = heads / numtos * 100 #Calculates percentage
     print("This means", headper, "percent of your flips landed on heads and 0 percent of your flips landed on tails.")
-
-headper = heads / numtos * 100
-tailper = tails / numtos * 100
-print("This means", headper, "percent of your flips landed on heads and", tailper,
-      "percent of your flips landed on tails.")
+else:
+    headper = heads / numtos * 100
+    tailper = tails / numtos * 100
+    print("This means", headper, "percent of your flips landed on heads and", tailper,
+    "percent of your flips landed on tails.")
 
 
