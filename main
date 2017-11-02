@@ -1,4 +1,4 @@
-'''Welcome to the source code for the Shitty Coin Toss Simulator, or SCTS (pronounces SKITS). This program will let you
+'''Welcome to the source code for the Shitty Coin Toss Simulator, or SCTS (pronounced SKITS). This program will let you
 simulate a given number of coin tosses and then give you the stats afterwards.'''
 import random
 
